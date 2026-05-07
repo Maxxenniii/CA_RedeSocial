@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar Senha - PortalError404</title>
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-left">
+        <a href="index.html"><img src="/img/Logo_CA_Branco.png" alt="Logo CA" class="logo"></a>
+        <div class="search-bar">
+          <input type="text" placeholder="Buscar...">
+          <button>Buscar</button>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="login.html">Login</a></li>
+        <li><a href="cadastro.html" class="btn-cadastrar">Cadastrar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="main-wrapper" style="justify-content: center;">
+    <div class="content-area" style="max-width: 400px; margin: 50px auto;">
+      <h2>Recuperar Senha</h2>
+      <form action="login.html" method="get">
+        <div class="form-group">
+          <label for="email">E-mail cadastrado:</label>
+          <input type="email" id="email" name="email" placeholder="email@exemplo.com" required>
+        </div>
+        <button type="submit" class="btn-primary">Enviar link de recuperacao</button>
+      </form>
+      <p style="margin-top:20px;"><a href="login.html" style="color: var(--text-primary);">Voltar ao login</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 PortalError404 - Rede Social Academica</p>
+  </footer>
+</body>
+</html>

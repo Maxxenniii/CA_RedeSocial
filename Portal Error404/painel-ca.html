@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel CA - PortalError404</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/painel-ca.css">
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-left">
+        <a href="feed.html"><img src="/img/Logo_CA_Branco.png" alt="Logo CA" class="logo"></a>
+        <div class="search-bar">
+          <input type="text" placeholder="Buscar...">
+          <button>Buscar</button>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="feed.html">Home</a></li>
+        <li>
+          <a href="#" class="notification-bell">
+            !
+            <span class="badge">5</span>
+          </a>
+        </li>
+        <li><a href="perfil.html" class="avatar-small">EU</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="main-wrapper">
+    <aside class="sidebar">
+      <div class="profile-sidebar">
+        <div class="avatar-large">EU</div>
+        <strong>Usuario Logado</strong>
+        <a href="perfil.html" class="btn-profile">Ver Perfil</a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li><a href="feed.html">Feed Geral</a></li>
+        <li><a href="postos-ca.html">Posts do CA</a></li>
+        <li><a href="perfil.html">Meu Perfil</a></li>
+        <li><a href="config.html">Configuracoes</a></li>
+        <li><a href="painel-ca.html">Painel CA</a></li>
+        <li><a href="painel-admin.html">Painel Admin</a></li>
+        <li><a href="login.html">Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="content-area">
+      <div class="painel-container">
+        <!-- Cabeçalho -->
+        <div class="painel-header">
+          <h2>Painel de Moderacao</h2>
+          <span class="painel-badge">Centro Academico Error 404</span>
+        </div>
+
+        <!-- Cards de estatísticas -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-icon">&#9888;</span>
+            <span class="stat-value">3</span>
+            <span class="stat-label">Denuncias Pendentes</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">&#10003;</span>
+            <span class="stat-value">47</span>
+            <span class="stat-label">Resolvidas</span>
+          </div>
+        </div>
+
+        <!-- Seção de Denúncias -->
+        <div class="section">
+          <div class="section-header">
+            <h3>Denuncias Recebidas</h3>
+            <button class="btn-primary btn-sm">Ver Todas</button>
+          </div>
+          <div class="denuncia-item">
+            <div class="denuncia-info">
+              <strong>Carlos Eduardo</strong> - Conteudo ofensivo em comentario
+            </div>
+            <span class="denuncia-status status-pendente">Pendente</span>
+          </div>
+          <div class="denuncia-item resolvida">
+            <div class="denuncia-info">
+              <strong>Anonimo</strong> - Spam em postagem
+            </div>
+            <span class="denuncia-status status-resolvida">Resolvida</span>
+          </div>
+          <div class="denuncia-item">
+            <div class="denuncia-info">
+              <strong>Marina Souza</strong> - Discurso de odio
+            </div>
+            <span class="denuncia-status status-pendente">Pendente</span>
+          </div>
+        </div>
+
+    
+    </main>
+
+    <aside class="right-panel">
+      <h3>Atividades Recentes</h3>
+      <p style="color:var(--text-muted);">Nova denuncia recebida.</p>
+      <p style="color:var(--text-muted);">Denuncia #2 resolvida.</p>
+      <hr style="border-color:var(--border-color); margin: 10px 0;">
+      <h3>Lembretes</h3>
+      <p style="color:var(--warning);">3 denuncias aguardando acao.</p>
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 PortalError404 - Rede Social Academica</p>
+  </footer>
+</body>
+</html>
