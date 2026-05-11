@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap'); /* Importa a fonte retrô usada no projeto */
 
+/* Variáveis globais: cores principais e efeitos do tema */
 :root {
   --black: #000000;
   --violet: #7D39EB;
@@ -28,13 +29,14 @@
 }
 
 * {
-  font-family: "VT323", monospace;
+  font-family: "VT323", monospace; /* Configuração geral aplicada em todos os elementos */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: var(--white);
 }
 
+/* Estilo do corpo da página */
 body {
   background-color: var(--bg-body);
   background-image: repeating-linear-gradient(
@@ -51,7 +53,7 @@ body {
 
 /* Header e Navegação */
 header {
-  position: sticky;
+  position: sticky; /* Mantém o menu fixo ao rolar */
   top: 0;
   z-index: 100;
 }
@@ -62,19 +64,21 @@ nav {
   border-radius: 5px;
   border: 1px solid var(--violet-dark);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Separa logo e menu */
   align-items: center;
   padding: 0 20px;
   box-shadow: 0 0 10px rgba(125, 57, 235, 0.2);
   height: 60px;
 }
 
+/* Agrupa logo e barra de busca */
 .nav-left {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
+/* Estilo da logo */
 .logo {
   width: 50px;
   height: auto;
@@ -83,11 +87,13 @@ nav {
   cursor: pointer;
 }
 
+/* Efeito visual ao passar o mouse na logo */
 .logo:hover {
   filter: drop-shadow(2px 0 var(--violet)) drop-shadow(-2px 0 var(--lime));
   animation: glitch-img 0.15s infinite alternate;
 }
 
+/* Barra de pesquisa */
 .search-bar {
   display: flex;
   align-items: center;
