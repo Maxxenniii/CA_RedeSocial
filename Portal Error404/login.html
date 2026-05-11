@@ -8,15 +8,18 @@
   <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
 </head>
 <body>
+  <!-- Cabeçalho principal com navegação -->
   <header>
     <nav>
       <div class="nav-left">
+        <!-- Logo do sistema com link para a página inicial -->
         <a href="index.html"><img src="/img/Logo_CA_Branco.png" alt="Logo CA" class="logo"></a>
         <div class="search-bar">
           <input type="text" placeholder="Buscar...">
           <button>Buscar</button>
         </div>
       </div>
+      <!-- Links rápidos para login e cadastro -->
       <ul class="nav-links">
         <li><a href="login.html">Login</a></li>
         <li><a href="cadastro.html" class="btn-cadastrar">Cadastrar</a></li>
@@ -24,21 +27,32 @@
     </nav>
   </header>
 
+  <!-- Área principal centralizada da página -->
   <div class="main-wrapper" style="justify-content: center;">
     <div class="content-area" style="max-width: 400px; margin: 50px auto;">
+
+      <!-- Título do formulário -->
       <h2>Login</h2>
       <form action="feed.html" method="get">
+
+        <!-- Campo para digitar email ou nome de usuário -->
         <div class="form-group">
           <label for="email">E-mail ou usuario:</label>
           <input type="text" id="email" name="email" placeholder="ex: fulano@ca.org" required>
         </div>
+
+        <!-- Campo para digitar a senha de forma protegida -->
         <div class="form-group">
           <label for="senha">Senha:</label>
           <input type="password" id="senha" name="senha" placeholder="********" required>
         </div>
         <button type="submit" class="btn-primary">Entrar</button>
+
+        <!-- Link para recuperação de senha -->
         <a href="recuperar-senha.html" style="margin-left:15px; color: var(--text-muted);">Esqueci a senha</a>
       </form>
+
+      <!-- Link para usuários que ainda não possuem cadastro -->
       <p style="margin-top:20px;">Nao tem conta? <a href="cadastro.html" style="color: var(--text-primary);">Cadastre-se</a></p>
     </div>
   </div>
