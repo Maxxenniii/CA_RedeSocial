@@ -1,17 +1,17 @@
 /* config.css - Estilo para a página de configurações */
 
 .config-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: flex; /* Organiza os elementos em bloco flexível */
+  flex-direction: column; /* Coloca os itens em coluna */
+  gap: 20px; /* Espaçamento entre os elementos */
 }
 
 .config-tabs {
-  display: flex;
+  display: flex; /* Organiza os elementos em bloco flexível */
   flex-wrap: wrap;
   gap: 5px;
   border-bottom: 2px solid var(--violet-dark);
-  padding-bottom: 0;
+  padding-bottom: 0; /* Linha inferior decorativa */
 }
 
 .config-tab {
@@ -25,7 +25,7 @@
   border-radius: 4px 4px 0 0;
   transition: all 0.2s;
 }
-
+/* Cor ao passar o mouse */
 .config-tab:hover {
   background: var(--violet-dark);
   color: var(--white);
@@ -35,7 +35,7 @@
   background: var(--violet-dark);
   color: var(--lime);
   border-color: var(--violet);
-  box-shadow: 0 0 10px rgba(125, 57, 235, 0.5);
+  box-shadow: 0 0 10px rgba(125, 57, 235, 0.5); /* Efeito de brilho */
 }
 
 .config-panel {
@@ -47,11 +47,11 @@
 }
 
 .config-panel.active {
-  display: block;
+  display: block; /* Mostra apenas o painel ativo */
 }
 
 .config-panel h3 {
-  color: var(--text-primary);
+  color: var(--text-primary); /* Cor do título */
   margin-bottom: 20px;
   font-size: 1.5rem;
   border-bottom: 1px solid var(--border-color);
@@ -92,31 +92,31 @@
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: var(--lime);
+  border-color: var(--lime); /* Destaca campo selecionado */
   box-shadow: 0 0 8px var(--lime-dark);
-  outline: none;
+  outline: none; /* Remove borda padrão do navegador */
 }
 
 .form-group textarea {
-  min-height: 100px;
-  resize: vertical;
+  min-height: 100px; /* Altura mínima do campo de texto */
+  resize: vertical; /* Permite aumentar só na vertical */
 }
 
 .checkbox-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Organiza checkboxes em coluna */
   gap: 10px;
 }
 
 .checkbox-item {
   display: flex;
-  align-items: center;
+  align-items: center; /* Alinha checkbox e texto */
   gap: 10px;
 }
 
 .checkbox-item input[type="checkbox"] {
   width: auto;
-  accent-color: var(--violet);
+  accent-color: var(--violet); /* Personaliza cor do checkbox */
 }
 
 .denuncia-table {
@@ -138,15 +138,15 @@
 }
 
 .denuncia-table .status-pendente {
-  color: var(--warning);
+  color: var(--warning); /* Cor para denúncias pendentes */
 }
 
 .denuncia-table .status-resolvida {
-  color: var(--success);
+  color: var(--success); /* Cor para denúncias resolvidas */
 }
 
 .save-button {
-  margin-top: 20px;
+  margin-top: 20px; /* Espaço acima do botão salvar */
 }
 
 /* Estilo para a seção de aparência (cores de exemplo) */
@@ -159,21 +159,22 @@
 .color-swatch {
   width: 30px;
   height: 30px;
-  border-radius: 50%;
+  border-radius: 50%; /* Deixa em formato circular */
   border: 2px solid var(--white);
   cursor: pointer;
   transition: transform 0.2s;
 }
 
 .color-swatch:hover {
-  transform: scale(1.2);
+  transform: scale(1.2); /* Aumenta ao passar o mouse */
 }
-
+/* Ajustes para telas menores */
 @media (max-width: 768px) {
   .config-tabs {
     flex-direction: column;
   }
   .config-tab {
-    border-radius: 0;
+    border-radius: 0; /* Remove arredondamento */
+  }
   }
 }
