@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - PortalError404</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+</head>
+<body>
+   <header>
+    <!-- Nav será carregada dinamicamente -->
+    <nav id="nav-container"></nav>
+  </header>
+  <script src="js/componentes.js"></script>
+
+  <div class="main-wrapper" style="justify-content: center;">
+    <div class="content-area" style="max-width: 400px; margin: 50px auto;">
+      <h2>Cadastro</h2>
+      <form action="feed.html" method="get">
+        <div class="form-group">
+          <label for="nome">Nome completo:</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" placeholder="email@exemplo.com" required>
+        </div>
+        <div class="form-group">
+          <label for="senha">Senha:</label>
+          <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required>
+        </div>
+        <button type="submit" class="btn-primary">Cadastrar</button>
+      </form>
+      <p style="margin-top:20px;">Ja tem conta? <a href="login.html" style="color: var(--text-primary);">Faça login</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 PortalError404 - Rede Social Acadêmica</p>
+  </footer>
+
+  <script src="js/componentes.js"></script>
+  <script src="js/aparencia.js"></script>
+</body>
+</html>

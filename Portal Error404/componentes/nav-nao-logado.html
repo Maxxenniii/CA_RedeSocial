@@ -1,0 +1,37 @@
+<div class="nav-left">
+  <a href="fedd_nao_logado.html"><img src="img/Logo_CA_Branco.png" alt="Logo CA" class="logo"></a>
+  <div class="search-bar">
+    <form id="searchForm" action="fedd_nao_logado.html" method="get">
+      <input type="text" name="q" placeholder="Buscar por posts, autores..." id="searchInput" value="">
+      <button type="submit">Buscar</button>
+    </form>
+  </div>
+</div>
+<ul class="nav-links">
+  <li><a href="fedd_nao_logado.html">Feed</a></li>
+  <li><a href="login.html">Entrar</a></li>
+  <li><a href="cadastro.html">Cadastrar</a></li>
+</ul>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const q = urlParams.get('q');
+  const searchInput = document.getElementById('searchInput');
+  if (q && searchInput) searchInput.value = q;
+
+  // Interceptar submit para preservar filtro (se existir)
+  const searchForm = document.getElementById('searchForm');
+  if (searchForm) {
+    searchForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const input = this.querySelector('input[name="q"]');
+      const query = input.value.trim();
+      let url = this.action;
+      const params = new URLSearchParams();
+      if (query) params.set('q', query);
+      const currentFilter = new URLSearchParams(window.location.search).get('filter');
+      if (currentFilter === 'ca') params.set('filter', 'ca');
+      window.location.href = url + (params.toString() ? '?' + params.toString() : '');
+    });
+  }
+</script>

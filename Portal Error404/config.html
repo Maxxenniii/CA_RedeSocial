@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurações - PortalError404</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/config.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/notificacoes.css">
+  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+</head>
+<body>
+  <header>
+    <nav id="nav-container"></nav>
+  </header>
+
+  <script src="js/componentes.js"></script>
+  <script src="js/common.js"></script>
+
+  <div class="main-wrapper">
+    <aside class="sidebar" id="sidebar-container"></aside>
+
+    <main class="content-area">
+      <div class="config-container">
+        <div class="config-tabs">
+          <div class="config-tab active" data-tab="perfil">Perfil</div>
+          <div class="config-tab" data-tab="privacidade">Privacidade</div>
+          <div class="config-tab" data-tab="notificacoes">Notificações</div>
+          <div class="config-tab" data-tab="denuncias">Denúncias</div>
+          <div class="config-tab" data-tab="aparencia">Aparência</div>
+        </div>
+
+        <!-- Aba Perfil -->
+        <div class="config-panel active" id="perfil">
+          <h3>Editar Perfil</h3>
+          <div class="form-group">
+            <label>Nome completo</label>
+            <input type="text" id="editFullName" placeholder="Seu nome completo">
+          </div>
+          <div class="form-group">
+            <label>Nome de usuário (username)</label>
+            <input type="text" id="editUsername" placeholder="@username">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="editEmail" placeholder="email@exemplo.com">
+          </div>
+          <div class="form-group">
+            <label>Foto de perfil (URL da imagem)</label>
+            <input type="text" id="editAvatarUrl" placeholder="https://...">
+          </div>
+          <div class="form-group">
+            <label>Foto de banner (URL da imagem)</label>
+            <input type="text" id="editBannerUrl" placeholder="https://...">
+          </div>
+          <div class="form-group">
+            <label>Biografia</label>
+            <textarea id="editBio" rows="3" placeholder="Conte um pouco sobre você..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Pronomes</label>
+            <input type="text" id="editPronouns" placeholder="ex: ele/dele, ela/dela, elu/delu">
+          </div>
+          <div class="form-group">
+            <label>Período acadêmico</label>
+            <input type="text" id="editPeriodo" placeholder="ex: 3º período, 5º período (com dependências)">
+          </div>
+          <button class="btn-primary save-button" id="saveProfileConfig">Salvar Alterações</button>
+        </div>
+
+        <!-- Aba Privacidade -->
+        <div class="config-panel" id="privacidade">
+          <h3>Privacidade e Visibilidade</h3>
+          <div class="form-group">
+            <label>Quem pode ver meu perfil?</label>
+            <select id="privacyProfileView">
+              <option value="todos">Todos</option>
+              <option value="seguidores">Apenas seguidores</option>
+              <option value="eu">Apenas eu</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Quem pode me seguir?</label>
+            <select id="privacyFollow">
+              <option value="todos">Todos</option>
+              <option value="bsi">Apenas usuários do BSI</option>
+              <option value="ninguem">Ninguém (perfil privado)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Quem pode ver minhas postagens?</label>
+            <select id="privacyPosts">
+              <option value="todos">Todos</option>
+              <option value="seguidores">Apenas seguidores</option>
+            </select>
+          </div>
+          <button class="btn-primary save-button" id="savePrivacyConfig">Salvar privacidade</button>
+        </div>
+
+        <!-- Aba Notificações -->
+        <div class="config-panel" id="notificacoes">
+          <h3>Preferências de Notificações</h3>
+          <div class="checkbox-group">
+            <label class="checkbox-item">
+              <input type="checkbox" id="notifEmail"> Notificações por email
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" id="notifPush"> Notificações push (navegador)
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" id="notifNewFollowers"> Novos seguidores
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" id="notifComments"> Comentários nas minhas postagens
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" id="notifCAPosts"> Postagens de membros do CA
+            </label>
+          </div>
+          <button class="btn-primary save-button" id="saveNotifConfig">Salvar preferências</button>
+        </div>
+
+        <!-- Aba Denúncias -->
+        <div class="config-panel" id="denuncias">
+          <h3>Central de Denúncias</h3>
+          <p style="color:var(--text-muted); margin-bottom:20px;">Histórico de denúncias feitas e recebidas.</p>
+          <table class="denuncia-table">
+            <thead>
+              <tr><th>ID</th><th>Denunciado</th><th>Motivo</th><th>Status</th></tr>
+            </thead>
+            <tbody id="denunciasTableBody">
+              <tr><td>1</td><td>Carlos Eduardo</td><td>Conteúdo ofensivo</td><td class="status-pendente">Pendente</td></tr>
+              <tr><td>2</td><td>Marina Souza</td><td>Spam</td><td class="status-resolvida">Resolvida</td></tr>
+            </tbody>
+           </table>
+          <button class="btn-primary save-button" id="newDenunciaBtn" style="margin-top:15px;">Nova denúncia</button>
+        </div>
+
+        <!-- Aba Aparência -->
+        <div class="config-panel" id="aparencia">
+          <h3>Personalização Visual</h3>
+          <p style="color:var(--text-muted); margin-bottom:20px;">Escolha a cor principal do tema (roxo padrão).</p>
+          <div class="form-group">
+            <label>Cor destaque</label>
+            <div class="theme-picker">
+              <input type="color" id="themeColor" value="#7D39EB">
+              <input type="text" id="hexInput" value="#7D39EB" maxlength="7" placeholder="#000000">
+              <button id="resetThemeBtn" class="reset-theme-btn">Restaurar padrão (roxo)</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Fonte (experimental)</label>
+            <select id="fontSelect">
+              <option value="VT323">VT323 (padrão)</option>
+              <option value="Courier New">Courier New</option>
+              <option value="monospace">Monospace</option>
+            </select>
+          </div>
+          <button class="btn-primary save-button" id="saveAppearanceConfig">Salvar aparência</button>
+        </div>
+      </div>
+    </main>
+
+    <aside class="right-panel" id="suggestions-container">
+      <!-- sugestões serão carregadas via fetch -->
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 PortalError404 - Rede Social Acadêmica</p>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/dados-notificacoes.js"></script>
+  <script src="js/nav.js"></script>
+
+  <script>
+    // Função para carregar sugestões (igual ao feed)
+    fetch('componentes/sugestoes.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('suggestions-container').innerHTML = html;
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'css/sugestoes.css';
+        document.head.appendChild(link);
+        const script = document.createElement('script');
+        script.src = 'js/sugestoes.js';
+        document.body.appendChild(script);
+      });
+  </script>
+  <script src="js/config-page.js"></script>
+  <script src="js/aparencia.js"></script>
+</body>
+</html>

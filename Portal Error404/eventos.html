@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos CA - PortalError404</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/eventos.css">
+  <link rel="stylesheet" href="css/notificacoes.css">
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+</head>
+<body>
+  <header>
+    <nav id="nav-container"></nav>
+  </header>
+
+  <div class="main-wrapper">
+    <aside class="sidebar" id="sidebar-container"></aside>
+
+    <main class="content-area eventos-page">
+      <div class="page-header">
+        <h2>📅 Eventos do CA</h2>
+        <button class="btn-add-event" id="btnOpenForm" style="display: none;">+ Novo Evento</button>
+      </div>
+
+      <!-- Filtros -->
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="upcoming">Futuros</button>
+        <button class="filter-btn" data-filter="past">Passados</button>
+      </div>
+
+      <div class="event-form-container" id="eventFormContainer" style="display: none;">
+        <form id="eventForm">
+          <h3>Novo Evento</h3>
+          <div class="form-group">
+            <label for="eventTitle">Título</label>
+            <input type="text" id="eventTitle" placeholder="Nome do evento" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="eventDate">Data</label>
+              <input type="date" id="eventDate" required>
+            </div>
+            <div class="form-group">
+              <label for="eventTime">Hora</label>
+              <input type="time" id="eventTime" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="eventLocation">Local</label>
+            <input type="text" id="eventLocation" placeholder="Sala / Link">
+          </div>
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="eventLimitCheck"> Limitar vagas
+            </label>
+          </div>
+          <div class="form-group" id="maxParticipantsGroup" style="display: none;">
+            <label for="eventMaxParticipants">Número máximo de participantes</label>
+            <input type="number" id="eventMaxParticipants" min="1" value="10">
+          </div>
+          <div class="form-group">
+            <label for="eventDescription">Descrição</label>
+            <textarea id="eventDescription" rows="3" placeholder="Detalhes do evento..."></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Salvar Evento</button>
+            <button type="button" class="btn-cancel" id="btnCancelForm">Cancelar</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Lista de eventos -->
+      <ul class="event-list" id="eventList">
+        <!-- Preenchido via JS -->
+      </ul>
+
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <span>📭</span>
+        <p>Nenhum evento encontrado.</p>
+      </div>
+    </main>
+
+    <aside class="right-panel">
+      <h3>Próximos</h3>
+      <div id="upcomingMiniList" class="mini-event-list"></div>
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 PortalError404 - Rede Social Acadêmica</p>
+  </footer>
+
+  <!-- Modal de detalhes do evento -->
+  <div class="modal-overlay" id="eventModal" style="display: none;">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <h2 id="modalTitle"></h2>
+      <div class="modal-meta">
+        <span id="modalDateTime"></span>
+        <span id="modalLocation"></span>
+        <span id="modalCapacity"></span>
+      </div>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/common.js"></script>
+  <script src="js/componentes.js"></script>
+  <script src="js/eventos.js"></script>
+  <script src="js/aparencia.js"></script>
+</body>
+</html>

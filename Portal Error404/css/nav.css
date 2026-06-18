@@ -1,0 +1,322 @@
+/* ===== NAVEGAÇÃO ===== */
+nav {
+  background-color: var(--bg-primary);
+  margin: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid var(--violet-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 0 10px rgba(125, 57, 235, 0.2);
+  height: 60px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  transition: all 0.2s ease;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.logo:hover {
+  filter: drop-shadow(2px 0 var(--violet)) drop-shadow(-2px 0 var(--lime));
+  animation: glitch-img 0.15s infinite alternate;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: var(--gray-dark);
+  border: 1px solid var(--violet-dark);
+  border-radius: 4px;
+  padding: 5px 10px;
+  transition: all 0.2s;
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  width: 200px;
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-bar button {
+  background: transparent;
+  border: none;
+  color: var(--violet-light);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0 5px;
+}
+
+.search-bar:focus-within {
+  border-color: var(--lime);
+  box-shadow: var(--neon-glow);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.nav-links li a,
+.nav-links li span {
+  display: block;
+  padding: 12px 10px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nav-links li a:hover,
+.nav-links li span:hover {
+  color: var(--white);
+  text-shadow: 2px 0 var(--violet), -2px 0 var(--lime);
+  animation: glitch-simple 0.1s infinite;
+}
+
+/* ===== SINO DE NOTIFICAÇÕES ===== */
+.nav-links .notification-bell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  margin: 0;
+  border-radius: 50%;
+  width: auto;
+  height: auto;
+  line-height: 1;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.notification-bell {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  color: var(--text-primary);
+}
+
+.notification-bell:hover {
+  text-shadow: 0 0 8px var(--lime);
+  cursor: pointer;
+}
+
+.notification-bell .badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--error);
+  color: white;
+  border-radius: 50%;
+  padding: 2px 5px;
+  font-size: 0.65rem;
+  border: 1px solid black;
+  min-width: 16px;
+  text-align: center;
+  line-height: 1;
+  z-index: 5;
+}
+
+/* ===== CONTAINER DO DROPDOWN ===== */
+.notification-container {
+  position: relative;
+}
+
+/* ===== DROPDOWN ===== */
+.notification-dropdown {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: -10px;
+  width: 380px;
+  max-width: 90vw;
+  background: var(--bg-primary);
+  border: 2px solid var(--violet-dark);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(125, 57, 235, 0.4), 0 10px 30px rgba(0,0,0,0.8);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px) scale(0.96);
+  transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1);
+  z-index: 1100;
+  overflow: hidden;
+}
+
+.notification-dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* seta */
+.notification-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -9px;
+  right: 24px;
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid var(--violet-dark);
+  filter: drop-shadow(0 0 4px var(--violet));
+}
+
+/* cabeçalho */
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--violet-dark);
+  background: var(--gray-dark);
+}
+
+.dropdown-header h4 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  text-shadow: 0 0 6px var(--lime);
+}
+
+.mark-all-read {
+  background: transparent;
+  border: 1px solid var(--violet-dark);
+  color: var(--violet-light);
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.mark-all-read:hover {
+  border-color: var(--lime);
+  color: var(--lime);
+  text-shadow: 0 0 5px var(--lime);
+  box-shadow: 0 0 8px var(--lime-dark);
+}
+
+/* lista */
+.notification-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.notification-item {
+  display: flex;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--gray-mid);
+  transition: all 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.notification-item:hover {
+  background: var(--gray-dark);
+  border-color: var(--violet-dark);
+}
+
+/* indicador de não lida */
+.notification-item.unread::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10%;
+  height: 80%;
+  width: 4px;
+  background: var(--violet);
+  border-radius: 0 3px 3px 0;
+  box-shadow: 0 0 8px var(--violet), 0 0 15px var(--violet-dark);
+  animation: pulse-unread 2s infinite;
+}
+
+@keyframes pulse-unread {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; box-shadow: 0 0 12px var(--violet), 0 0 20px var(--violet-light); }
+}
+
+.notification-item.read {
+  opacity: 0.6;
+}
+
+.notif-icon {
+  font-size: 1.3rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-mid);
+  border-radius: 50%;
+  border: 1px solid var(--violet-dark);
+  flex-shrink: 0;
+}
+
+.notif-content {
+  flex: 1;
+}
+
+.notif-text {
+  margin: 0 0 4px 0;
+  color: var(--white);
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.notif-text strong {
+  color: var(--text-primary);
+  text-shadow: 0 0 3px var(--lime-dark);
+}
+
+.notif-time {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* rodapé */
+.dropdown-footer {
+  padding: 12px 18px;
+  text-align: center;
+  border-top: 1px solid var(--violet-dark);
+  background: var(--gray-dark);
+}
+
+.dropdown-footer a {
+  color: var(--violet-light);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.dropdown-footer a:hover {
+  color: var(--lime);
+  text-shadow: 0 0 8px var(--lime);
+  text-decoration: underline;
+}

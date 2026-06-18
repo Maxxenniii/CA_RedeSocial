@@ -1,0 +1,244 @@
+/* perfil.css - Estilo MySpace/SpaceHey para a página de perfil */
+
+/* Container principal do perfil */
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cabeçalho do perfil - estilo MySpace */
+.profile-header {
+  background: linear-gradient(135deg, var(--violet-dark) 0%, #2a0e5e 100%);
+  border: 3px solid var(--violet);
+  border-radius: 0;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(125, 57, 235, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de scanlines no cabeçalho */
+.profile-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  pointer-events: none;
+}
+
+.profile-avatar-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.profile-avatar-large {
+  width: 150px;
+  height: 150px;
+  border: 5px solid var(--lime);
+  background: var(--gray-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: var(--text-primary);
+  box-shadow: 0 0 25px var(--lime-glow), 0 0 50px rgba(198, 255, 51, 0.5);
+  outline: 3px solid var(--violet);
+  outline-offset: -10px;
+}
+
+.profile-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.profile-info h2 {
+  font-size: 2.5rem;
+  color: var(--lime);
+  text-shadow: 3px 3px 0 var(--violet-dark), 0 0 15px var(--lime);
+  margin-bottom: 5px;
+  letter-spacing: 2px;
+}
+
+.profile-info .badge-role {
+  display: inline-block;
+  background: var(--violet);
+  color: white;
+  padding: 5px 15px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border: 1px solid var(--lime);
+}
+
+.profile-stats {
+  display: flex;
+  gap: 25px;
+  margin-top: 15px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  color: var(--lime);
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.bio-box {
+  background: var(--gray-dark);
+  border: 2px solid var(--violet-dark);
+  padding: 20px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.bio-box h3 {
+  background: var(--violet-dark);
+  color: var(--white);
+  padding: 5px 10px;
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.bio-content {
+  color: var(--white);
+  line-height: 1.6;
+}
+
+/* Blinkies e badges decorativos (estilo MySpace) */
+.decorative-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.blinkie {
+  background: var(--violet-dark);
+  border: 1px solid var(--lime);
+  padding: 3px 10px;
+  font-size: 0.8rem;
+  color: var(--lime);
+  text-transform: uppercase;
+  animation: glitch-simple 0.15s infinite;
+}
+
+/* Seção de posts pessoais */
+.personal-posts {
+  margin-top: 10px;
+}
+
+/* Título de seção estilo retro */
+.section-title {
+  background: var(--violet-dark);
+  color: var(--white);
+  padding: 8px 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  border-left: 5px solid var(--lime);
+}
+
+/* Banner do perfil */
+.profile-banner {
+  width: 100%;
+  height: 180px;
+  background-color: var(--gray-dark);
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: -60px;
+  border-bottom: 3px solid var(--violet);
+}
+.profile-avatar-large-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid var(--lime);
+  object-fit: cover;
+  background: var(--gray-dark);
+}
+.badge-ca {
+  background: var(--violet-dark);
+  color: var(--lime);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin: 8px 0;
+}
+.profile-pronouns, .profile-periodo {
+  color: var(--text-secondary);
+  margin: 4px 0;
+}
+.label {
+  color: var(--violet-light);
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  background: var(--gray-dark);
+  margin: 10% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  border: 2px solid var(--violet);
+  border-radius: 8px;
+}
+.modal-content input, .modal-content textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+  background: var(--black);
+  border: 1px solid var(--border-color);
+  color: white;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-avatar-large {
+    width: 120px;
+    height: 120px;
+  }
+  .profile-stats {
+    justify-content: center;
+  }
+}

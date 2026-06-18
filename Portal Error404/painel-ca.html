@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel CA - PortalError404</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/painel-ca.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="/css/notificacoes.css">
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+</head>
+<body>
+  <header>
+    <nav id="nav-container"></nav>
+  </header>
+  <script src="js/componentes.js"></script>
+  <script src="js/nav.js"></script>
+
+  <div class="main-wrapper">
+    <aside class="sidebar" id="sidebar-container"></aside>
+
+    <main class="content-area">
+      <div class="painel-container">
+        <!-- Cabeçalho -->
+        <div class="painel-header">
+          <h2>Painel de Moderação</h2>
+          <span class="painel-badge">Centro Acadêmico Error 404</span>
+        </div>
+
+        <!-- Cards de estatísticas -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-icon">⚠️</span>
+            <span class="stat-value" id="pendentesCount">0</span>
+            <span class="stat-label">Denúncias Pendentes</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">✅</span>
+            <span class="stat-value" id="resolvidasCount">0</span>
+            <span class="stat-label">Resolvidas</span>
+          </div>
+        </div>
+
+        <!-- Seção de Denúncias com abas -->
+        <div class="section">
+          <div class="section-header">
+            <div style="display: flex; gap: 20px;">
+              <button id="tabPendentes" class="filter-btn active">📋 Pendentes</button>
+              <button id="tabResolvidas" class="filter-btn">✅ Resolvidas</button>
+            </div>
+            <button class="btn-primary btn-sm" id="refreshBtn">🔄 Atualizar</button>
+          </div>
+
+          <!-- Lista de denúncias pendentes -->
+          <div id="divPendentes" style="display: block;">
+            <div id="denunciasPendentesList">
+              <div class="empty-state">Carregando...</div>
+            </div>
+          </div>
+
+          <!-- Lista de denúncias resolvidas -->
+          <div id="divResolvidas" style="display: none;">
+            <div id="denunciasResolvidasList">
+              <div class="empty-state">Carregando...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <aside class="right-panel">
+      <h3>Atividades Recentes</h3>
+      <p style="color:var(--text-muted);">Nova denúncia recebida.</p>
+      <p style="color:var(--text-muted);">Denúncia #2 resolvida.</p>
+      <hr style="border-color:var(--border-color); margin: 10px 0;">
+      <h3>Lembretes</h3>
+      <p style="color:var(--warning);">Ações pendentes no moderador.</p>
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 PortalError404 - Rede Social Acadêmica</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/common.js"></script>
+  <script src="js/dados-notificacoes.js"></script>
+  <script src="js/painel-ca.js"></script>
+  <script src="js/aparencia.js"></script>
+</body>
+</html>

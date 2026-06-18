@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Admin - PortalError404</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/painel-admin.css">
+
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/notificacoes.css">
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+</head>
+<body>
+  <header>
+    <nav id="nav-container"></nav>
+  </header>
+  <script src="js/componentes.js"></script>
+  <script src="js/nav.js"></script>
+
+  <div class="main-wrapper">
+    <aside class="sidebar" id="sidebar-container"></aside>
+
+    <main class="content-area">
+      <div class="admin-container">
+        <div class="admin-header">
+          <h2>👑 Painel de Administrador</h2>
+          <span class="admin-badge">Controle Total do Sistema</span>
+        </div>
+
+        <!-- Abas de navegação -->
+        <div class="admin-tabs">
+          <button class="admin-tab active" data-tab="usuarios">👥 Gerenciar Usuários</button>
+          <button class="admin-tab" data-tab="denuncias">🚨 Denúncias do Sistema</button>
+          <button class="admin-tab" data-tab="relatorios">📊 Relatórios e Métricas</button>
+          <button class="admin-tab" data-tab="configuracoes">⚙️ Configurações Globais</button>
+        </div>
+
+        <!-- Aba: Gerenciar Usuários -->
+        <div id="tabUsuarios" class="admin-panel active">
+          <div class="search-bar-admin">
+            <input type="text" id="searchUser" placeholder="Buscar usuário por nome ou username...">
+            <button id="searchUserBtn" class="btn-primary">Buscar</button>
+          </div>
+          <div class="usuarios-list-container">
+            <table class="admin-table" id="usuariosTable">
+              <thead>
+                <tr><th>ID</th><th>Nome</th><th>Username</th><th>Email</th><th>Membro CA</th><th>Banido</th><th>Ações</th></tr>
+              </thead>
+              <tbody id="usuariosTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Aba: Denúncias do Sistema -->
+        <div id="tabDenuncias" class="admin-panel">
+          <div class="denuncias-filter">
+            <button id="filterDenunciasPendentes" class="filter-btn active">Pendentes</button>
+            <button id="filterDenunciasResolvidas" class="filter-btn">Resolvidas</button>
+          </div>
+          <div id="denunciasAdminList" class="denuncias-list">
+            <div class="empty-state">Carregando...</div>
+          </div>
+        </div>
+
+        <!-- Aba: Relatórios e Métricas -->
+        <div id="tabRelatorios" class="admin-panel">
+          <div class="stats-cards">
+            <div class="stat-card-admin">
+              <span class="stat-icon">👥</span>
+              <span class="stat-value" id="totalUsers">0</span>
+              <span class="stat-label">Total de Usuários</span>
+            </div>
+            <div class="stat-card-admin">
+              <span class="stat-icon">📝</span>
+              <span class="stat-value" id="totalPosts">0</span>
+              <span class="stat-label">Total de Posts</span>
+            </div>
+            <div class="stat-card-admin">
+              <span class="stat-icon">💬</span>
+              <span class="stat-value" id="totalComments">0</span>
+              <span class="stat-label">Total de Comentários</span>
+            </div>
+            <div class="stat-card-admin">
+              <span class="stat-icon">🚨</span>
+              <span class="stat-value" id="totalDenuncias">0</span>
+              <span class="stat-label">Denúncias (Pendentes)</span>
+            </div>
+          </div>
+          <button id="gerarRelatorioBtn" class="btn-primary">📄 Gerar Relatório Completo</button>
+          <div id="relatorioDetalhado" style="margin-top:20px; display:none; background:var(--gray-dark); padding:15px; border-radius:8px;"></div>
+        </div>
+
+        <!-- Aba: Configurações Globais -->
+        <div id="tabConfiguracoes" class="admin-panel">
+          <div class="form-group">
+            <label>Manutenção do Site</label>
+            <button id="toggleManutencaoBtn" class="btn-primary">Ativar/Desativar Modo Manutenção</button>
+            <p class="small-text" id="manutencaoStatus">Status: Desativado</p>
+          </div>
+          <div class="form-group">
+            <label>Limpar Cache do Sistema</label>
+            <button id="limparCacheBtn" class="btn-primary">Limpar Todos os Dados</button>
+          </div>
+          <div class="form-group">
+            <label>Exportar Dados</label>
+            <button id="exportarDadosBtn" class="btn-primary">Exportar Backup (JSON)</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <aside class="right-panel">
+      <h3>Alertas Rápidos</h3>
+      <div id="adminAlertas">
+        <p class="alert-item">🔔 Nenhum alerta no momento.</p>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 PortalError404 - Rede Social Acadêmica</p>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/dados-notificacoes.js"></script>
+  <script src="js/painel-admin.js"></script>
+  <script src="js/aparencia.js"></script>
+</body>
+</html>

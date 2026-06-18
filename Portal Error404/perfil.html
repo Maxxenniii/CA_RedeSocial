@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Perfil - PortalError404</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/perfil.css">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/notificacoes.css">
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+</head>
+<body>
+    <header>
+    <!-- Nav será carregada dinamicamente -->
+    <nav id="nav-container"></nav>
+  </header>
+  <script src="js/componentes.js"></script>
+  <script src="js/nav.js"></script>
+
+
+  <!-- Menu lateral de navegação -->
+  <div class="main-wrapper">
+   <!-- Sidebar será carregada dinamicamente -->
+    <aside class="sidebar" id="sidebar-container"></aside>
+
+    <main class="content-area">
+      <div class="profile-page"></div>
+    </main>
+
+     <aside class="right-panel" id="suggestions-container"></aside>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 PortalError404 - Rede Social Academica</p>
+  </footer>
+</body>
+<script src="js/common.js"></script>
+<script src="js/dados-notificacoes.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/perfil.js"></script>
+<script src="js/aparencia.js"></script>
+<script>
+  fetch('componentes/sugestoes.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('suggestions-container').innerHTML = html;
+
+      if (!document.querySelector('link[href="css/sugestoes.css"]')) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'css/sugestoes.css';
+        document.head.appendChild(link);
+      }
+      const script = document.createElement('script');
+      script.src = 'js/sugestoes.js';
+      document.body.appendChild(script);
+    });
+</script>
+
+
+</html>

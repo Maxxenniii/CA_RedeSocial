@@ -1,0 +1,326 @@
+/* ========== COMENTÁRIOS - ESTILO RETRÔ/GLITCH CORRIGIDO ========== */
+.comments-area {
+  margin-top: 15px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 12px;
+}
+
+.comments-list {
+  max-height: 350px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--violet) var(--gray-dark);
+}
+
+.comments-list::-webkit-scrollbar {
+  width: 6px;
+}
+.comments-list::-webkit-scrollbar-track {
+  background: var(--gray-dark);
+}
+.comments-list::-webkit-scrollbar-thumb {
+  background: var(--violet);
+  border-radius: 3px;
+}
+
+/* Cada comentário */
+.comment-item {
+  display: flex;
+  gap: 10px;
+  background: var(--gray-mid);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border-left: 3px solid var(--violet);
+  transition: all 0.2s ease;
+}
+
+.comment-item:hover {
+  border-left-color: var(--lime);
+  transform: translateX(2px);
+  box-shadow: 0 0 6px rgba(125, 57, 235, 0.3);
+}
+
+/* Avatar do comentário */
+.comment-avatar {
+  width: 32px;
+  height: 32px;
+  background: var(--gray-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--lime);
+  border: 1px solid var(--violet);
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+/* Corpo do comentário */
+.comment-body {
+  flex: 1;
+}
+
+.comment-header {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.comment-header strong {
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+.comment-time {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.comment-text {
+  font-size: 0.9rem;
+  margin: 4px 0 6px;
+  line-height: 1.3;
+  word-break: break-word;
+  color: var(--white);
+}
+
+/* Botões de ação do comentário */
+.comment-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+.comment-actions button {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.comment-actions button:hover {
+  color: var(--lime);
+  text-shadow: 0 0 3px var(--lime);
+}
+
+/* Campo de edição inline */
+.edit-comment-input {
+  width: 100%;
+  background: var(--gray-dark);
+  border: 1px solid var(--lime);
+  color: var(--white);        /* texto branco */
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+/* Formulário de resposta */
+.reply-form {
+  margin-top: 10px;
+}
+
+.reply-input-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.reply-input {
+  flex: 1;
+  background: var(--gray-dark);
+  border: 1px solid var(--border-color);
+  padding: 6px 8px;
+  color: var(--white);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.85rem;
+}
+
+.reply-input:focus {
+  border-color: var(--lime);
+  outline: none;
+}
+
+.reply-submit, .reply-cancel {
+  background: var(--violet-dark);
+  border: 1px solid var(--violet);
+  color: var(--white);
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.reply-submit:hover, .reply-cancel:hover {
+  background: var(--violet);
+  box-shadow: var(--violet-glow);
+}
+
+/* Mensagem de lista vazia */
+.empty {
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 15px;
+  background: var(--gray-mid);
+  border-radius: 6px;
+}
+
+/* Área de adicionar comentário (nível raiz) */
+.add-comment {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+.comment-input {
+  flex: 1;
+  background: var(--gray-dark);
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  color: var(--white);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.comment-input:focus {
+  border-color: var(--lime);
+  outline: none;
+}
+
+.comment-submit {
+  background: var(--violet-dark);
+  border: 1px solid var(--violet);
+  color: var(--white);
+  padding: 6px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.comment-submit:hover {
+  background: var(--violet);
+  box-shadow: var(--violet-glow);
+}
+
+/* Animações suaves */
+.comment-item {
+  animation: fadeInUp 0.2s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reset específico para inputs dentro da área de comentários */
+.comments-area input,
+.comments-area textarea,
+.comments-area button {
+  background-color: var(--gray-dark);
+  color: var(--white);
+  border: 1px solid var(--border-color);
+}
+.comments-area button {
+  background-color: var(--violet-dark);
+  border-color: var(--violet);
+}
+.comments-area button:hover {
+  background-color: var(--violet);
+}
+
+.upload-btn, .upload-btn-small, .reply-upload-label {
+  background: var(--violet-dark);
+  border: 1px solid var(--violet);
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: inline-block;
+  transition: all 0.2s;
+}
+.upload-btn:hover, .upload-btn-small:hover, .reply-upload-label:hover {
+  background: var(--violet);
+  box-shadow: var(--violet-glow);
+}
+.upload-btn-small, .reply-upload-label {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+}
+.post-image-preview img, .comment-preview img, .reply-preview img {
+  border-radius: 6px;
+  margin-top: 5px;
+}
+.comment-upload-area {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+.feed-filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+.filter-option {
+    background: var(--gray-dark);
+    border: 1px solid var(--border-color);
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+}
+.filter-option.active {
+    background: var(--violet);
+    border-color: var(--lime);
+    color: var(--lime);
+    box-shadow: 0 0 5px var(--lime);
+}
+.filter-option:hover {
+    border-color: var(--lime);
+}
+.ca-badge {
+    background: var(--violet-dark);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    margin-left: 8px;
+}
+
+.info-box {
+  background: var(--gray-mid);
+  border: 1px dashed var(--violet);
+  margin-bottom: 20px;
+}
+.require-login {
+  cursor: pointer;
+}

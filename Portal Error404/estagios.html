@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estágios - PortalError404</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/estagios.css">   
+  <link rel="stylesheet" href="css/notificacoes.css">
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+</head>
+<body>
+  <header>
+    <nav id="nav-container"></nav>
+  </header>
+
+  <div class="main-wrapper">
+    <aside class="sidebar" id="sidebar-container"></aside>
+
+    <main class="content-area estagios-page">
+      <div class="page-header">
+        <h2>💼 Vagas de Estágio</h2>
+        <button class="btn-add-event" id="btnOpenForm">+ Nova Vaga</button>
+      </div>
+
+      <!-- Filtros -->
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Todas</button>
+        <button class="filter-btn" data-filter="ativas">Ativas</button>
+        <button class="filter-btn" data-filter="expiradas">Expiradas</button>
+      </div>
+
+      <!-- Formulário de criação/edição -->
+      <div class="event-form-container" id="estagioFormContainer" style="display: none;">
+        <form id="estagioForm">
+          <h3 id="formTitle">Nova Vaga de Estágio</h3>
+          <div class="form-group">
+            <label for="estagioTitulo">Título da vaga *</label>
+            <input type="text" id="estagioTitulo" placeholder="Ex: Desenvolvedor Front-end" required>
+          </div>
+          <div class="form-group">
+            <label for="estagioEmpresa">Empresa/Instituição *</label>
+            <input type="text" id="estagioEmpresa" placeholder="Nome da empresa" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="estagioLocal">Local</label>
+              <input type="text" id="estagioLocal" placeholder="Remoto / Híbrido / Presencial">
+            </div>
+            <div class="form-group">
+              <label for="estagioTipo">Tipo</label>
+              <select id="estagioTipo">
+                <option value="Remoto">Remoto</option>
+                <option value="Híbrido">Híbrido</option>
+                <option value="Presencial">Presencial</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="estagioDeadline">Data limite para candidatura</label>
+              <input type="date" id="estagioDeadline">
+            </div>
+            <div class="form-group">
+              <label for="estagioContato">Contato / Link</label>
+              <input type="url" id="estagioContato" placeholder="https://...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="estagioDescricao">Descrição da vaga</label>
+            <textarea id="estagioDescricao" rows="3" placeholder="Responsabilidades, requisitos, benefícios..."></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary" id="btnSubmit">Salvar Vaga</button>
+            <button type="button" class="btn-cancel" id="btnCancelForm">Cancelar</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Lista de vagas -->
+      <ul class="event-list" id="estagioList">
+        <!-- JS preenche aqui -->
+      </ul>
+
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <span>📭</span>
+        <p>Nenhuma vaga de estágio encontrada.</p>
+      </div>
+    </main>
+
+    <aside class="right-panel">
+      <h3>📌 Vagas em Destaque</h3>
+      <div id="destaqueMiniList" class="mini-event-list"></div>
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 PortalError404 - Rede Social Acadêmica</p>
+  </footer>
+
+  <!-- Modal de detalhes da vaga -->
+  <div class="modal-overlay" id="estagioModal" style="display: none;">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <h2 id="modalTitulo"></h2>
+      <div class="modal-meta">
+        <span id="modalEmpresa"></span>
+        <span id="modalLocalTipo"></span>
+        <span id="modalDeadline"></span>
+      </div>
+      <p id="modalDescricao"></p>
+      <div class="modal-actions">
+        <a href="#" id="modalContatoLink" target="_blank" class="btn-primary" style="display:inline-block; margin-top:15px;">Candidatar-se</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/componentes.js"></script>
+  <script src="/js/estagios.js"></script>
+  <script src="js/aparencia.js"></script>
+</body>
+</html>

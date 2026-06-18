@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feed - PortalError404</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/feed.css">
+  <link rel="stylesheet" href="/css/notificacoes.css">
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+</head>
+<body>
+  <header>
+    <nav id="nav-container"></nav>
+  </header>
+
+  <script src="js/componentes.js"></script>
+
+  <div class="main-wrapper">
+    <aside class="sidebar" id="sidebar-container"></aside>
+   
+    <main class="content-area">
+      <h2>Feed</h2>
+      
+      <!-- Seletor de filtro -->
+      <div class="feed-filter">
+        <div class="filter-option active" data-filter="all">Todos os posts</div>
+        <div class="filter-option" data-filter="ca">Apenas CA</div>
+      </div>
+
+      <!-- Container do feed -->
+      <div id="feedContainer"></div>
+    </main>
+
+     <aside class="right-panel" id="suggestions-container"></aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 PortalError404 - Rede Social Acadêmica</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/common.js"></script>
+  <script src="js/dados-notificacoes.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/feed.js"></script>
+  <script>
+  fetch('componentes/sugestoes.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('suggestions-container').innerHTML = html;
+
+      if (!document.querySelector('link[href="css/sugestoes.css"]')) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'css/sugestoes.css';
+        document.head.appendChild(link);
+      }
+      const script = document.createElement('script');
+      script.src = 'js/sugestoes.js';
+      document.body.appendChild(script);
+    });
+</script>
+<script src="js/aparencia.js"></script>
+
+</body>
+</html>

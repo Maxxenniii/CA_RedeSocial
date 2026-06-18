@@ -1,0 +1,240 @@
+/* painel-ca.css - Estilo para o Painel do Centro Acadêmico */
+
+.painel-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.painel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.painel-header h2 {
+  color: var(--text-primary);
+  font-size: 2.5rem;
+  text-shadow: 3px 3px 0 var(--violet-dark), 0 0 10px var(--lime);
+  margin: 0;
+}
+
+.painel-badge {
+  background: var(--violet-dark);
+  color: var(--white);
+  border: 1px solid var(--violet);
+  padding: 8px 20px;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+/* Cards de estatísticas */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.stat-card {
+  background: var(--gray-dark);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--violet);
+}
+
+.stat-card.destaque::before {
+  background: var(--lime);
+  box-shadow: 0 0 10px var(--lime);
+}
+
+.stat-card:hover {
+  border-color: var(--lime);
+  box-shadow: 0 0 15px rgba(198, 255, 51, 0.3);
+  transform: translateY(-3px);
+}
+
+.stat-card .stat-icon {
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.stat-card .stat-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--white);
+  margin: 5px 0;
+}
+
+.stat-card .stat-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+/* Seções */
+.section {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(125, 57, 235, 0.2);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.section-header h3 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px var(--lime);
+}
+
+.section-header .btn-sm {
+  padding: 6px 15px;
+  font-size: 0.9rem;
+}
+
+/* Tabela de postos */
+.postos-list {
+  list-style: none;
+}
+
+.posto-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--gray-mid);
+  transition: all 0.2s;
+}
+
+.posto-item:hover {
+  background: var(--gray-dark);
+}
+
+.posto-info strong {
+  display: block;
+  color: var(--white);
+}
+
+.posto-info small {
+  color: var(--text-muted);
+}
+
+.posto-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.posto-actions button {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.posto-actions button:hover {
+  border-color: var(--lime);
+  color: var(--lime);
+}
+
+/* Denúncias recentes */
+.denuncia-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-left: 3px solid var(--error);
+  margin-bottom: 10px;
+  background: var(--gray-dark);
+}
+
+.denuncia-item.resolvida {
+  border-left-color: var(--lime);
+}
+
+.denuncia-item .denuncia-info {
+  flex: 1;
+}
+
+.denuncia-item .denuncia-status {
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.status-pendente {
+  background: var(--error);
+  color: white;
+}
+
+.status-resolvida {
+  background: var(--lime-dark);
+  color: var(--black);
+}
+
+/* Grid de ações */
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.action-card {
+  background: var(--gray-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.action-card:hover {
+  border-color: var(--violet);
+  box-shadow: 0 0 10px rgba(125, 57, 235, 0.3);
+}
+
+.action-card h4 {
+  color: var(--violet-light);
+  margin: 10px 0;
+}
+
+.action-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .painel-header h2 {
+    font-size: 1.8rem;
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notificações - PortalError404</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/notificacoes.css">
+  <script src="js/dados-notificacoes.js"></script>
+  <script src="js/componentes.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/notificacoes.js"></script>
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+</head>
+<body>
+   <header>
+    <!-- Nav será carregada dinamicamente -->
+    <nav id="nav-container"></nav>
+  </header>
+  
+
+  <!-- Menu lateral de navegação -->
+  <div class="main-wrapper">
+   <!-- Sidebar será carregada dinamicamente -->
+    <aside class="sidebar" id="sidebar-container"></aside>
+
+    <!-- CONTEÚDO PRINCIPAL: LISTA DE NOTIFICAÇÕES -->
+    <main class="content-area notificacoes-page">
+      <div class="page-header">
+        <h2><img src="img/notificacao_icon.png" alt="notificacao_icon" width="20px"> Todas as Notificações</h2>
+        <div class="header-actions">
+          <button class="btn-mark-all-read">Marcar todas como lidas</button>
+          <button class="btn-clear-read">Limpar lidas</button>
+        </div>
+      </div>
+
+      <!-- Filtros -->
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Todas</button>
+        <button class="filter-btn" data-filter="unread">Não lidas</button>
+        <button class="filter-btn" data-filter="read">Lidas</button>
+      </div>
+
+      <!-- Lista de notificações -->
+      <ul class="notifications-list" id="notificationsList">
+        <!-- Os itens serão gerados pelo JS, mas deixei alguns estáticos para fallback e exemplo -->
+      </ul>
+
+      <!-- Mensagem de lista vazia -->
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <span>📭</span>
+        <p>Nenhuma notificação encontrada.</p>
+      </div>
+    </main>
+
+    <!-- Painel direito (sugestões) igual ao feed -->
+    <aside class="right-panel">
+      <h3>Sugestões</h3>
+      <div class="suggestion-item">
+        <div class="suggestion-avatar">R</div>
+        <div class="suggestion-info"><strong>Rafael Lima</strong><small>Membro CA</small></div>
+        <button class="follow-btn">Seguir</button>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 PortalError404 - Rede Social Acadêmica</p>
+  </footer>
+
+  <script src="js/notificacoes.js"></script>
+  <script src="js/aparencia.js"></script>
+</body>
+</html>
